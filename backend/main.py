@@ -50,14 +50,15 @@ app = FastAPI(
     version="0.2.0",
 )
 
-# CORS Setup to allow frontend communication
+# CORS Setup to allow frontend communication (local and deployed)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
         "http://127.0.0.1:3000",
+        "https://sentinel-graph-orcin.vercel.app",
     ],
-    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1)(:[0-9]+)?",
+    allow_origin_regex=r"https?://(localhost|127\.0\.0\.1)(:[0-9]+)?|https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
