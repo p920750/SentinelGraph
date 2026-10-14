@@ -1,172 +1,127 @@
-# SentinelGraph: 3-Minute Demo Video Script & Walkthrough Guide
-> **Tailored for Hackathon Judges, Evaluators, and Non-Technical Viewers**  
-> **Target Video Runtime:** 2 minutes 45 seconds – 3 minutes 00 seconds  
-> **Target Speaking Pace:** 130 – 140 words per minute (confident, clear, conversational)
+# SentinelGraph: Master Demo Video Script & Production Walkthrough
+> **Tailored for Hackathon Evaluators, Technical Judges, and Executive Audiences**  
+> **Total Target Video Runtime:** Exactly **03:30** (3 minutes and 30 seconds / 210 seconds)  
+> **Target Speaking Pace:** 135 words per minute (Clear, confident, authoritative narration)  
+> **Total Spoken Word Count:** ~475 words (Strictly calibrated to finish at 03:25 – 03:30)
+
+---
+
+## ⏱️ Video Timeline & Structure Overview
+
+```
+0:00 ────── 1. Introduction & FalkorDB Architecture (60s / ~135 words) ────── 1:00
+1:00 ────── 2. Page 1: Landing / Overview Screen (45s / ~102 words) ───────── 1:45
+1:45 ────── 3. Page 2: SOC Dashboard & Autonomous Mitigation (60s / ~138 words) 2:45
+2:45 ────── 4. Page 3: Graph Analytics & Production Cloud Close (45s / ~100 words) 3:30
+```
 
 ---
 
 ## 🎬 Pre-Recording Checklist & Technical Setup
 
-### 1. Environment & Server Initialization
-Before hitting "Record", ensure both backend and frontend services are running and healthy:
-- **Terminal 1 (FalkorDB Docker):**
-  ```bash
-  docker compose up -d
-  ```
-  *(Note: If Docker is unavailable, SentinelGraph runs automatically in Deterministic Local Topology Mode with 100% interactive fidelity!)*
-- **Terminal 2 (FastAPI Backend):**
-  ```bash
-  cd backend
-  python main.py
-  ```
-  *Verify:* `http://localhost:8000/api/health` returns `200 OK`.
-- **Terminal 3 (Next.js Frontend):**
-  ```bash
-  cd frontend
-  npm run dev
-  ```
-  *Verify:* `http://localhost:3000` loads cleanly.
+### 1. Browser & Display Standards
+- **Resolution:** Full HD **1080p (1920x1080)** with browser zoom set strictly to **100%**.
+- **Clean Recording Canvas:** Hide the bookmarks bar (`Ctrl+Shift+B` or `Cmd+Shift+B`), close unrelated tabs, and silence all OS notifications.
+- **Cursor Visibility:** In OBS Studio, Loom, or Camtasia, enable **mouse cursor click highlighting** (or a subtle glowing halo) so viewers can follow your clicks effortlessly.
+- **Target URL:** Live production deployment at [https://sentinel-graph-orcin.vercel.app](https://sentinel-graph-orcin.vercel.app) (or local dev server `http://localhost:3000`).
 
-### 2. Browser & Recording Configuration
-- **Browser Window:** Chrome, Edge, or Brave set to **1080p (1920x1080)** resolution with **100% zoom**.
-- **Clean Screen:** Hide bookmarks bar (`Ctrl+Shift+B`), close non-essential tabs, and disable desktop notifications.
-- **Mouse Cursor:** In OBS or Loom, enable **mouse cursor highlighting** or a subtle yellow halo so viewers can follow your clicks effortlessly.
-- **Clean Starting State:**
-  - Open `http://localhost:3000/dashboard`.
-  - If the status badge already says "QUARANTINE ENFORCED", click the **"Reset Breach Scenario"** button in the top right to return the system to the active breach state.
-  - Navigate back to `http://localhost:3000/` (Overview page) to begin the recording.
-
-### 3. Voice & Inflection Guidelines
-- **Speak to Business Impact:** Emphasize *what problem is solved* (stopping hackers, protecting customer payment records) rather than getting bogged down in database syntax.
-- **Highlight Velocity:** Whenever FalkorDB responds, emphasize phrases like *"single-digit milliseconds"* and *"instant visibility"*.
-- **Use Visual Synchronization:** Never speak about a button before pointing to it. Move the cursor smoothly, pause for half a second on key cards, and click with deliberate pacing.
-
----
-
-## ⏱️ Video Timeline Overview
-
-```
-0:00 ─── Hook & The Security Blindspot ─── 0:30
-0:30 ─── Page 1: Landing & Architecture Overview ─── 1:00
-1:00 ─── Page 2: SOC Command Center & Threat Triage ─── 1:30
-1:30 ─── Page 2: 1-Click Autonomous Mitigation ─── 2:00
-2:00 ─── Page 3: Graph Analytics Console ─── 2:30
-2:30 ─── Conclusion & Hackathon Impact ─── 3:00
-```
+### 2. Clean Starting State
+1. Open the **SOC Dashboard** (`/dashboard`).
+2. If the status badge displays green *"QUARANTINE ENFORCED"*, click the **"Reset Breach Scenario"** button in the top right to restore the active breach state.
+3. Verify the flashing red status badge reads: **"ACTIVE EXPLOITATION"**.
+4. Navigate back to the **Overview Page** (`/`) to begin recording at timestamp `0:00`.
 
 ---
 
 ## 🎙️ Master Dual-Column Teleprompter Script
 
-### Scene 1: The Hook & The Security Blindspot (0:00 – 0:30)
-* **Goal:** Capture immediate attention by contrasting legacy alert fatigue with real-world connected risk.
+---
 
-| Visual Action & Screen Cue | Spoken Voiceover Script | Delivery & Timing Notes |
+### Part 1: Introduction & Architecture (0:00 – 1:00 | 60 Seconds)
+* **Goal:** Demystify modern cloud risk, introduce SentinelGraph, and explain why FalkorDB's graph-native engine is foundational for autonomous security swarms.
+* **Word Count:** 135 words (~60 seconds at 135 wpm).
+
+| Timestamp & Screen Recording Cue | Spoken Voiceover Narration | Delivery, Tone & Inflection Directives |
 | :--- | :--- | :--- |
-| **[0:00]** Full screen showing the SentinelGraph hero title on `http://localhost:3000`.<br><br>The cursor rests comfortably on the animated gradient title: *"SentinelGraph: Autonomous Multi-Agent Security SOC"*. | "Every modern company runs on the cloud—interconnecting Kubernetes pods, cloud permissions, and databases. But when a cyberattack strikes, traditional security tools fail at one critical job: **they cannot see the big picture**." | **Tone:** Engaging, authoritative.<br><br>**Pacing:** Steady and deliberate. |
-| **[0:15]** Slowly scroll down just enough to reveal the four architecture capability cards.<br><br>Cursor gestures in a wide arc across the screen. | "Security teams get bombarded by hundreds of disconnected alerts every single day. A compromised web server in one room doesn't know it connects to the customer database in another. Tracing how a hacker moves laterally takes human analysts hours or even days—and by then, data is already gone." | **Emphasis:** *"hundreds of disconnected alerts"*.<br><br>[Brief 0.5s pause before pivot]. |
-| **[0:24]** Scroll back smoothly to the top hero section. Hover over the pulsing status badge: **"Powered by FalkorDB"**. | "That’s why we built **SentinelGraph**—an autonomous, graph-native Security Operations Center that connects every single dot in real time." | **Tone:** Enthusiastic and confident. |
+| **[0:00 – 0:15]**<br>Full screen showing the SentinelGraph hero screen.<br><br>The cursor rests comfortably below the animated gradient title: *"SentinelGraph: Autonomous Multi-Agent Security SOC"*.<br><br>Gently scroll down to reveal the four architecture capability cards. | "Modern enterprises operate across distributed cloud environments—connecting container workloads, permissions, and databases. But when attacks occur, traditional security tools create a massive blind spot: they trigger hundreds of disconnected alerts without understanding the big picture." | **Tone:** Engaging, serious, and authoritative.<br><br>**Pacing:** Steady and measured.<br><br>**Emphasis:** *"hundreds of disconnected alerts without understanding the big picture"*. |
+| **[0:15 – 0:30]**<br>Slowly scroll back up to the top hero section.<br><br>Hover over the pulsing status badge: **"Powered by FalkorDB"**.<br><br>Cursor circles smoothly around the subtitle mentioning autonomous agent swarms. | "Tracing how an attacker moves laterally across infrastructure still takes security teams hours or days—and by then, critical data is already gone. That's why we created **SentinelGraph**: an autonomous, graph-native Security Operations Center." | **Transition:** Pivot with energy from the problem statement to the solution.<br><br>[Brief 0.5s pause before deep dive]. |
+| **[0:30 – 1:00]**<br>Highlight the architecture badges on screen.<br><br>Gesture cursor between the capability cards: *Real-Time Attack Graph Traversal*, *FalkorDB Centrality Algorithms*, and *Autonomous Agent Swarm (MCP)*. | "At its foundation, SentinelGraph uses **FalkorDB**—an ultra-low latency graph database powered by GraphBLAS sparse matrix linear algebra. FalkorDB continuously correlates Kubernetes pods, privileged cloud IAM credentials, and zero-day CVEs into a live security knowledge graph. When combined with autonomous AI agents via the Model Context Protocol, SentinelGraph instantly evaluates multi-hop attack paths and calculates blast radius with sub-ten-millisecond execution speeds." | **Tone:** Technical, confident, and visionary.<br><br>**Key Terminology:** Crisp delivery on *"GraphBLAS sparse matrix linear algebra"*, *"Model Context Protocol"*, and *"sub-ten-millisecond speeds"*. |
 
 ---
 
-### Scene 2: Page 1 — Landing & Architecture Overview (0:30 – 1:00)
-* **Goal:** Demystify the graph engine using simple analogies and demonstrate interactive data seeding.
+### Part 2: First Page Walkthrough / Overview (1:00 – 1:45 | 45 Seconds)
+* **Goal:** Tour the Landing/Overview interface, explain the navigation structure and status badges, and demonstrate interactive 1-click database seeding.
+* **Word Count:** 102 words (~45 seconds at 135 wpm).
 
-| Visual Action & Screen Cue | Spoken Voiceover Script | Delivery & Timing Notes |
+| Timestamp & Screen Recording Cue | Spoken Voiceover Narration | Delivery, Tone & Inflection Directives |
 | :--- | :--- | :--- |
-| **[0:30]** Hover mouse over the **"Dynamic Security Topology Snapshot"** section.<br><br>Hover briefly over each counter pill: Active Pods (3), IAM Identities (2), Zero-Day CVEs (2), and Blast Radius Nodes (7). | "Think of SentinelGraph like a live subway map for your entire IT infrastructure. Powered by **FalkorDB**—an ultra-low latency graph engine—we model every server, user identity, and vulnerability as connected points in a live relationship graph." | **Analogy:** *"live subway map"* helps non-technical judges instantly understand graphs. |
-| **[0:45]** Move mouse to the purple button: **"Seed Security Graph"** and click it.<br><br>A cyber toast notification slides into the top right corner displaying: *"Security Graph Re-seeded: Initialized 7 nodes and 6 security relationships on sentinel_soc space"*. | "With a single click, our security graph seeds our live production topology: correlating public Kubernetes containers, privileged cloud roles, and active zero-day exploits into an interconnected knowledge web." | **Timing:** Wait 1 second to let the toast notification animate and fade smoothly. |
-| **[0:54]** Move cursor down to the primary blue button: **"Launch SOC Dashboard"** and click it. | "Now, let’s step into the shoes of a security engineer and enter the live SOC Command Center." | **Transition:** Click cleanly to trigger navigation to `/dashboard`. |
+| **[1:00 – 1:20]**<br>Focus on the top persistent cyber navigation bar.<br><br>Point cursor to the brand logo **"SG • SentinelGraph SOC v0.1"** on the left.<br><br>Hover over the three navigation links: **Overview**, **SOC Dashboard**, and **Graph Analytics**.<br><br>Scroll down slightly to the **Dynamic Security Topology Snapshot**. | "Starting on our Landing and Overview page, the interface immediately establishes complete situational awareness. At the top, our persistent cyber navigation bar gives instant access to Overview, the SOC Dashboard, and Graph Analytics. The hero section highlights our live engine readiness, confirming that our autonomous agent swarms and graph backend are actively synchronized." | **Tone:** Clear, welcoming, and structured.<br><br>**Pacing:** Smooth, synchronizing cursor movement with each mentioned navigation item. |
+| **[1:20 – 1:45]**<br>Hover sequentially over the 4 live statistic pills:<br>1. *Active Pods (3)*<br>2. *IAM Identities (2)*<br>3. *Zero-Day CVEs (2)*<br>4. *Blast Radius Nodes (7)*.<br><br>**CLICK** the purple button: **"Seed Security Graph"**.<br><br>Watch the cyber toast notification slide in: *"Security Graph Re-seeded: Initialized 7 nodes and 6 relationships"*. | "Directly below, the Dynamic Security Topology Snapshot displays live infrastructure counters: three active workloads, two IAM identities, two zero-day vulnerabilities, and seven connected assets. With a single click on 'Seed Security Graph', our backend instantly compiles and verifies our entire Kubernetes and cloud topology in FalkorDB. Now, let's step into the SOC Dashboard." | **Action Sync:** Click the button right as you say *"With a single click"*. Allow 1 second for viewers to read the toast notification.<br><br>**Transition:** Click the blue **"Launch SOC Dashboard"** button at 1:44. |
 
 ---
 
-### Scene 3: Page 2 — SOC Command Center & Live Threat Triage (1:00 – 1:30)
-* **Goal:** Showcase the live breach scenario, the MITRE attack mapping, and the visual threat trajectory toward the crown jewel.
+### Part 3: Second Page Walkthrough / SOC Dashboard (1:45 – 2:45 | 60 Seconds)
+* **Goal:** Showcase the live breach scenario, explain the 3-column command center, demonstrate autonomous agent reasoning, and execute 1-click containment.
+* **Word Count:** 138 words (~60 seconds at 135 wpm).
 
-| Visual Action & Screen Cue | Spoken Voiceover Script | Delivery & Timing Notes |
+| Timestamp & Screen Recording Cue | Spoken Voiceover Narration | Delivery, Tone & Inflection Directives |
 | :--- | :--- | :--- |
-| **[1:00]** Page `/dashboard` loads.<br><br>Highlight the top header: the flashing red status badge reads: **"ACTIVE EXPLOITATION"**.<br><br>Move cursor to Column 1 (Incident Queue). | "We're inside the SOC Command Center, and an active incident has just triggered. On the left, our alert queue flags **Incident 7701**: a critical Remote Code Execution vulnerability with a maximum CVSS score of 9.8." | **Tone:** Urgent and focused.<br><br>**Visual:** Hover over the critical red alert card. |
-| **[1:12]** Move mouse to Column 2 (Center Visualizer Canvas).<br><br>Hover over the pulsing red node labeled **`k8s-pod-77`**.<br><br>Trace the connecting arrows from `k8s-pod-77` -> `sa-admin` -> `auth-service` -> to the amber database **`payment-db`**. | "Instead of forcing analysts to read thousands of lines of raw server logs, SentinelGraph renders the attack path visually. Look at the center canvas: an attacker breached our public web pod, and through lateral movement, they are just **two hops away from our crown-jewel customer payment database**!" | **Visual Sync:** Follow the arrow path slowly with the mouse pointer.<br><br>**Emphasis:** *"two hops away from our crown-jewel payment database"*. |
-| **[1:24]** Hover over the dashed boundary banner: **"Blast Radius: 4 Nodes (algo.harmonic: 1.83)"**. | "Our graph algorithm calculates the exact blast radius instantly: four critical assets are currently at risk of total compromise." | **Tone:** Demonstrates mathematical precision without getting bogged in formula details. |
+| **[1:45 – 2:05]**<br>The `/dashboard` page loads.<br><br>Point to the top header: the flashing red status badge reads: **"ACTIVE EXPLOITATION"**.<br><br>Move cursor to Column 1 (Left: Incident Queue). Hover over **Incident INC-2026-7701** (CVSS 9.8, Remote Code Execution in Ingress Pod). | "Entering the SOC Dashboard, an active breach has triggered. On the left, our threat feed flags Incident 7701: a critical Remote Code Execution exploit scoring a maximum CVSS 9.8." | **Tone:** Urgent, focused, and immersive.<br><br>**Pacing:** Deliberate; draw viewer attention to the severity metrics. |
+| **[2:05 – 2:20]**<br>Move mouse to Column 2 (Center: Visualizer Canvas).<br><br>Hover over the red compromised node: `k8s-pod-77`.<br><br>Follow the directional attack arrows:<br>`dev-praveen` ➔ `sa-admin` ➔ `k8s-pod-77` ➔ `auth-service` ➔ amber cylinder `payment-db`.<br><br>Hover over the dashed boundary banner: *"Blast Radius: 4 Nodes (algo.harmonic: 1.83)"*. | "In the center canvas, SentinelGraph visualizes the multi-hop attack trajectory: the attacker breached our ingress pod and is just two hops from our crown-jewel customer payment database. Our FalkorDB harmonic algorithm calculates an active blast radius of four vulnerable assets." | **Visual Sync:** Trace the attack path slowly with your cursor.<br><br>**Vocal Emphasis:** *"two hops from our crown-jewel customer payment database"*. |
+| **[2:20 – 2:32]**<br>Move mouse to Column 3 (Right: Autonomous Agent Terminal).<br><br>Scroll through the live MCP traces showing Step 1 (graph query), Step 2 (betweenness bridge detection), and Step 3 (harmonic blast radius). | "On the right, our Autonomous Agent Terminal has already audited the graph using Model Context Protocol tools, mapped the MITRE tactics, and staged a precision mitigation plan." | **Tone:** Professional and technically reassuring. |
+| **[2:32 – 2:45]**<br>Hover directly over the blue button: **"Execute Autonomous Mitigation"**.<br><br>**CLICK THE BUTTON AT 2:34.**<br><br>Watch the UI mutate in real time:<br>1. Status flips to green **"QUARANTINE ENFORCED"**.<br>2. Center pod turns green with **"ISOLATED"** shield.<br>3. Blast radius banner displays: **"Neutralized (0)"**.<br>4. Terminal records *Calico NetworkPolicy Applied, IAM Revoked*. | "Watch what happens when I click 'Execute Autonomous Mitigation'. Instantly, the status badge turns green to 'QUARANTINE ENFORCED'. Our agents quarantined the compromised pod, revoked the stolen administrator role, and collapsed the blast radius from four assets to zero—all in milliseconds." | **Pacing:** Build anticipation before the click, then speak with energetic triumph as the state flips to green.<br><br>**Visual Pause:** Linger 1.5 seconds on the green quarantined pod. |
 
 ---
 
-### Scene 4: Page 2 — 1-Click Autonomous Threat Mitigation (1:30 – 2:00)
-* **Goal:** The dramatic climax of the demo—showing autonomous AI agent response and the instantaneous collapse of the attack surface.
+### Part 4: Third Page Walkthrough / Graph Analytics & Conclusion (2:45 – 3:30 | 45 Seconds)
+* **Goal:** Demonstrate interactive Cypher query execution with sub-10ms GraphBLAS benchmarks, highlight production cloud deployment, and deliver a memorable closing.
+* **Word Count:** 100 words (~45 seconds at 135 wpm).
 
-| Visual Action & Screen Cue | Spoken Voiceover Script | Delivery & Timing Notes |
+| Timestamp & Screen Recording Cue | Spoken Voiceover Narration | Delivery, Tone & Inflection Directives |
 | :--- | :--- | :--- |
-| **[1:30]** Move mouse to Column 3 (Right Column: Autonomous Agent Terminal).<br><br>Scroll down slightly through the Agent Triage Dossier showing MCP tool execution logs. | "On the right is our **Autonomous Agent Swarm**, communicating via the Model Context Protocol. The agent has already audited the graph, verified the attack vector, and staged a precision containment plan." | **Tone:** Confident and innovative.<br><br>**Visual:** Show the live agent audit trail. |
-| **[1:42]** Center cursor over the prominent blue button: **"Execute Autonomous Mitigation"**.<br><br>**CLICK THE BUTTON.** | "Now watch what happens when we authorize mitigation—in three, two, one..." | **Pacing:** Build dramatic anticipation before the click. |
-| **[1:46]** Keep the camera on the screen as the state mutates in real time:<br><br>1. Top status badge turns green: **"QUARANTINE ENFORCED"**.<br>2. Center pod node turns green with an **"ISOLATED"** shield.<br>3. Blast radius banner changes to: **"Blast Radius: Neutralized (0)"**.<br>4. Terminal updates with audit logs: *Calico NetworkPolicy Applied, IAM sa-admin Revoked*. | "Boom! In less than a second, the attack is stopped dead in its tracks. Our autonomous agents quarantined the compromised pod with a Kubernetes network policy, revoked the stolen administrator role, and collapsed the blast radius from four nodes to **zero**—all without disrupting any other legitimate services in the cluster." | **Tone:** Energetic and triumphant.<br><br>**Visual Cue:** Hover over the green "QUARANTINE ENFORCED" badge and the green pod node. |
-| **[1:58]** Move cursor up to the top navigation bar and click **"Graph Analytics"**. | "Next, let's see how security teams can freely explore the graph." | **Transition:** Clean click to `/analytics`. |
-
----
-
-### Scene 5: Page 3 — Graph Analytics Studio & Plain-English Cypher (2:00 – 2:30)
-* **Goal:** Show that non-technical users and analysts can query complex infrastructure using 1-click templates with millisecond execution speeds.
-
-| Visual Action & Screen Cue | Spoken Voiceover Script | Delivery & Timing Notes |
-| :--- | :--- | :--- |
-| **[2:00]** Page `/analytics` loads.<br><br>Point to the top header banner: live graph counter displaying `Graph: sentinel_soc • Nodes: 7 • Edges: 6`. | "Welcome to the **Graph Analytics Studio**. Historically, asking questions about interconnected infrastructure required mastering complex query languages. SentinelGraph makes it accessible with 1-click security templates." | **Tone:** Informative and empowering. |
-| **[2:12]** On the Left Sidebar, click the template: **"Bridge Centrality Scan"** (`algo.betweenness`).<br><br>Watch the Cypher query populate the central editor automatically. Click the **"Run Cypher Query"** button. | "With one click, an analyst can run a Bridge Centrality Scan to detect which microservice acts as the most vulnerable bridge between the internet and internal databases. Powered by FalkorDB's GraphBLAS engine, the query executes in just **four milliseconds**!" | **Visual:** Point to the execution timer badge (`~4ms`) next to the editor.<br><br>**Emphasis:** *"four milliseconds!"* |
-| **[2:22]** Toggle between **"Table View"** and **"Raw JSON"** tabs in the result pane. Show the ranked list of services. | "We get clean, tabular intelligence showing that our authentication service is the key bottleneck. Security teams can now proactively harden their architecture before an attacker even discovers it." | **Tone:** Professional, highlighting preventative value. |
-
----
-
-### Scene 6: Conclusion & Hackathon Impact (2:30 – 3:00)
-* **Goal:** End with an unforgettable summary of why graph-native cybersecurity changes the industry.
-
-| Visual Action & Screen Cue | Spoken Voiceover Script | Delivery & Timing Notes |
-| :--- | :--- | :--- |
-| **[2:30]** Navigate back to the homepage (`/`) or SOC Dashboard (`/dashboard`) showing the green "QUARANTINE ENFORCED" system state.<br><br>Cursor rests near the SentinelGraph logo. | "To summarize: attackers don't think in isolated lists of alerts—they think in graphs. SentinelGraph proves that by pairing the high-speed graph intelligence of **FalkorDB** with autonomous AI agents, we can transform security operations from reactive alert fatigue into proactive, autonomous defense." | **Tone:** Inspiring, visionary, and clear.<br><br>**Key Soundbite:** *"Attackers don't think in lists—they think in graphs."* |
-| **[2:48]** Display GitHub repository or team credits slide/footer. | "Thank you for watching SentinelGraph—protecting the connected cloud, one relationship at a time." | **Tone:** Warm closing.<br><br>End video cleanly at **~2:55 – 3:00**. |
+| **[2:45 – 3:10]**<br>Click **"Graph Analytics"** in the top navigation bar.<br><br>The `/analytics` page loads.<br><br>On the Left Sidebar, click the template: **"Bridge Centrality Scan"** (`algo.betweenness`).<br><br>Click **"Run Cypher Query"**.<br><br>Point to the execution latency badge: **"~4.0 ms"**.<br><br>Toggle between **"Table View"** and **"Raw JSON"** tabs. | "Moving to the Graph Analytics Studio, security analysts can explore infrastructure relationships using plain-English Cypher templates. With one click, I run a Bridge Centrality Scan using FalkorDB's betweenness algorithm. Executing in just four milliseconds, it pinpoints our authentication service as the critical lateral chokepoint, allowing teams to proactively harden infrastructure before an exploit occurs." | **Tone:** Inspiring, crisp, and analytical.<br><br>**Emphasis:** *"Executing in just four milliseconds"*.<br><br>**Visual:** Show the clean tabular result rows with column headers. |
+| **[3:10 – 3:30]**<br>Navigate smoothly back to the overview screen or show the deployed URL bar: `https://sentinel-graph-orcin.vercel.app`.<br><br>Highlight the footer stating: *SentinelGraph Security Operations Center • FalkorDB + MCP Swarm*.<br><br>Cursor rests near the glowing SG brand logo. | "SentinelGraph is fully production-ready: deployed globally on Vercel, powered by a FastAPI backend on Render, and connected to high-availability FalkorDB Cloud. Attackers don't think in isolated alerts—they think in graphs. With SentinelGraph, modern security teams finally do too. Thank you." | **Tone:** Confident, visionary, and decisive.<br><br>**Signature Soundbite:** *"Attackers don't think in isolated alerts—they think in graphs."*<br><br>**Ending:** Warm closing, fade to black at **03:28 – 03:30**. |
 
 ---
 
 ## 🏆 Hackathon Judge Evaluation Alignment Matrix
 
-Use this matrix during video editing and verbal delivery to ensure all judging rubric categories are explicitly hit:
+Use this matrix to confirm that all Hackathon Track 1 judging criteria are explicitly articulated:
 
-| Track 1 Evaluation Criteria | Where It Appears in the Video | What the Judge Sees on Screen | Key Audio Talking Point |
-| :--- | :--- | :--- | :--- |
-| **1. FalkorDB Integration** | **0:30 & 2:15** | "Powered by FalkorDB" badge, live health check, and `sentinel_soc` graph space. | *"Powered by FalkorDB—an ultra-low latency graph engine that models your infrastructure like a live subway map."* |
-| **2. GraphBLAS Algorithms** | **1:24 & 2:15** | Betweenness Centrality (`algo.betweenness`), Harmonic Centrality (`algo.harmonicCentrality`), and MaxFlow. | *"Calculates exact blast radius using harmonic centrality, executing queries in just four milliseconds."* |
-| **3. Autonomous AI Agents (MCP)** | **1:30 – 1:55** | Autonomous Agent Swarm Terminal, explainable Cypher audit trails, and tool calls (`mcp::k8s`, `mcp::iam`). | *"Our autonomous agent swarm communicates via the Model Context Protocol to analyze attack lineage and stage precision containment."* |
-| **4. Real-World Business Value** | **1:12 – 1:50** | Visual attack path from breached public Pod -> lateral bridge -> Crown Jewel Payment Database. | *"Collapsed the blast radius from four nodes to zero before customer payment data could be stolen."* |
-| **5. Production UX & Polish** | **Throughout (0:00 – 3:00)** | Responsive dark cyber theme, animated visualizer canvas, live tabular result grids, and zero layout shift. | Seamless navigation across Overview, SOC Command Center, and Analytics Studio. |
-
----
-
-## 🚨 Live Demo & Offline Emergency Fallback Guide
-
-If presenting SentinelGraph live to judges (via Zoom, Google Meet, or an in-person stage) where internet or local Docker services might fluctuate, follow these fail-safe protocols:
-
-### Fallback Scenario 1: Docker / FalkorDB Service Disconnects
-- **Built-in Resilience:** SentinelGraph includes an automatic fallback system. If Docker stops, the backend immediately switches to **Local Topology Mode** (`Local Mode Ready`).
-- **Talking Point:** *"Notice the health badge displays 'Local Mode Ready'. SentinelGraph is engineered with zero-downtime resilience, maintaining deterministic graph evaluation even during infrastructure failover."*
-- **Action:** Continue clicking through the demo exactly as scripted—all algorithms, triage dossiers, and containment triggers will continue functioning deterministically!
-
-### Fallback Scenario 2: Resetting the Scenario for a Second Take
-- If you need to re-record or run the demo again for another judge:
-  1. Go to `/dashboard`.
-  2. Click the **"Reset Breach Scenario"** button in the top right.
-  3. The status flips back to red **"ACTIVE EXPLOITATION"**, pod `k8s-pod-77` returns to its breached red state, and the blast radius resets to 4 nodes.
-  4. You are instantly ready for another demonstration!
+| Rubric Evaluation Item | Timestamp in Video | Exact Visual Cue Shown | Spoken Narration Alignment |
+| :--- | :---: | :--- | :--- |
+| **1. FalkorDB Deep Integration** | **0:30 & 2:55** | "Powered by FalkorDB" badge, live query latency (`~4ms`), and GraphBLAS specs. | *"Powered by FalkorDB—an ultra-low latency graph database using GraphBLAS sparse matrix linear algebra."* |
+| **2. GraphBLAS Algorithms** | **2:15 & 2:55** | Betweenness Centrality (`algo.betweenness`) and Harmonic Centrality (`algo.harmonicCentrality`). | *"Our FalkorDB harmonic algorithm calculates an active blast radius of four vulnerable assets... betweenness pinpoints our bridge service."* |
+| **3. Autonomous MCP Agents** | **2:20 – 2:40** | Autonomous Agent Terminal, MCP tool traces (`mcp::k8s`, `mcp::iam`), and reasoning dossier. | *"Our agent swarm communicates via the Model Context Protocol to analyze attack lineage and stage precision containment."* |
+| **4. Real-World Business Value** | **2:05 – 2:42** | Multi-hop attack path toward customer financial database (`payment-db`) and 1-click mitigation. | *"The attacker is just two hops from our crown-jewel payment database... collapsed the blast radius from four assets to zero."* |
+| **5. Production Cloud Deployment** | **3:10 – 3:25** | Vercel URL bar, live Render API health check, and FalkorDB Cloud connectivity. | *"Deployed globally on Vercel, powered by a FastAPI backend on Render, and connected to high-availability FalkorDB Cloud."* |
 
 ---
 
-## 📝 Speaker's Quick Cheat Sheet (Printable Card)
+## 🚨 Live Demo & Fallback Scenario Guide
+
+### Scenario 1: Re-Recording a Second Take
+1. If you need to record another take or reset the scenario:
+   - Navigate to `/dashboard`.
+   - Click the **"Reset Breach Scenario"** button in the top right.
+   - The status badge returns to red **"ACTIVE EXPLOITATION"**, pod `k8s-pod-77` returns to its breached state, and the blast radius resets to 4 nodes.
+   - Click **"Overview"** in the navbar to begin from `0:00`.
+
+### Scenario 2: Offline / Local Docker Presentation
+- SentinelGraph features built-in fallback resilience. If internet connectivity drops, the application continues functioning deterministically with zero UI downtime.
+
+---
+
+## 📝 Speaker's Printable 4-Line Teleprompter Card
 
 ```
-┌────────────────────────────────────────────────────────────────────────┐
-│ SENTINELGRAPH DEMO CHEAT SHEET (TARGET: 2:45)                          │
-├────────────────────────────────────────────────────────────────────────┤
-│ 0:00 - 0:30  HOOK: "Modern attacks cross silos; alert fatigue is real." │
-│ 0:30 - 1:00  PAGE 1: FalkorDB is a subway map; click "Seed Graph".    │
-│ 1:00 - 1:30  PAGE 2: Breach alert! Hacker is 2 hops from payment-db.   │
-│ 1:30 - 2:00  MITIGATION: Click "Execute Autonomous Mitigation". Boom! │
-│ 2:00 - 2:30  PAGE 3: Bridge Centrality scan runs in 4 milliseconds.    │
-│ 2:30 - 3:00  CLOSE: "Attackers think in graphs. SentinelGraph does too."│
-└────────────────────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────────────────────┐
+│ SENTINELGRAPH DEMO SCRIPT CHEAT SHEET (TARGET: EXACTLY 03:30)                          │
+├────────────────────────────────────────────────────────────────────────────────────────┤
+│ 0:00 - 1:00  INTRO: "Siloed alerts create blind spots. FalkorDB + MCP connects them." │
+│ 1:00 - 1:45  PAGE 1: Tour Overview, verify live counters, click "Seed Security Graph".│
+│ 1:45 - 2:45  PAGE 2: Breach active! Hacker 2 hops from payment-db. Click Contain!     │
+│ 2:45 - 3:30  PAGE 3: 4ms Bridge Scan. Live on Vercel + Render. "Attackers think in    │
+│                      graphs—now security teams do too."                                │
+└────────────────────────────────────────────────────────────────────────────────────────┘
 ```
