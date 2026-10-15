@@ -348,6 +348,81 @@ sequenceDiagram
 
 ---
 
+## 🧰 Tech Stack Details
+
+SentinelGraph is built on a modern, decoupled, cloud-native architecture combining an ultra-responsive Next.js frontend, an asynchronous high-throughput FastAPI backend, a high-performance GraphBLAS-driven FalkorDB graph database, and enterprise-grade DevOps tooling with Git LFS. Below is an exhaustive technical breakdown of every tier, library, framework, and deployment platform powering the ecosystem.
+
+```
+                    ┌─────────────────────────────────────────────────────────────────┐
+                    │                      SENTINELGRAPH TECH STACK                   │
+                    └────────────────────────────────┬────────────────────────────────┘
+                                                     │
+        ┌─────────────────────────┬──────────────────┴──────────────┬─────────────────────────┐
+        ▼                         ▼                                 ▼                         ▼
+ 💻 Frontend Tier          ⚙️ Backend Tier                  🗄️ Database & Graph        🚀 DevOps & Tooling
+  • Next.js 14 (App)        • FastAPI (ASGI)                 • FalkorDB Cloud (AWS)     • Git & Git LFS
+  • React 18 & Hooks        • Python 3.10+                   • GraphBLAS Linear Alg     • GitHub Repo
+  • Tailwind CSS            • Model Context Protocol (MCP)   • openCypher Language      • Vercel Edge CI/CD
+  • Lucide React Icons      • Pydantic v2 Schemas            • Betweenness Centrality   • Render Cloud API
+  • Vercel Edge Network     • Uvicorn ASGI Server            • MaxFlow & Harmonic       • RESP3 / SSL Wire
+```
+
+### 1. Frontend Architecture
+The frontend provides a real-time, cyber-aesthetic Security Operations Center (SOC) dashboard and interactive graph analytics canvas designed for mission-critical situational awareness.
+- **Next.js 14 (App Router):** Leverages Next.js 14 with modern App Router conventions, React Server Components (RSC) where optimal, and client-side reactive views for live dashboard streaming and telemetry state management.
+- **React 18:** Powers component lifecycle, asynchronous data fetching hooks, dynamic UI re-rendering upon agent containment actions, and responsive modal interactions.
+- **Tailwind CSS & PostCSS:** Provides utility-first styling with custom cyber-theme palettes (e.g., deep charcoal `#0B0F19`, high-contrast emerald `#10B981`, amber `#F59E0B`, and crimson `#EF4444`), responsive grids, glassmorphism blur backdrops, and HUD glow animations.
+- **Lucide React:** Supplies crisp, accessible cybersecurity iconography (shields, nodes, server racks, activity monitors, lockouts, and alert indicators).
+- **Utility Libraries (`clsx`, `tailwind-merge`):** Facilitates dynamic, conflict-free CSS class concatenation for interactive state transitions and threat severity indicators.
+- **Vercel Platform Deployment:** Hosted globally on Vercel's Edge Network, ensuring sub-second Time-to-First-Byte (TTFB), automated branch preview builds, HTTP/2 multiplexing, and continuous production deployment.
+
+### 2. Backend & Agent Orchestration
+The backend operates as an asynchronous, high-throughput microservice responsible for real-time telemetry ingestion, threat correlation, graph query execution, and autonomous multi-agent swarm dispatch.
+- **FastAPI Framework:** Implements an asynchronous ASGI web service utilizing Python `async`/`await` patterns for non-blocking I/O operations, automatic OpenAPI/Swagger schema documentation (`/docs`), and native CORS middleware configured for cross-origin security between Vercel and Render.
+- **Python 3.10+ Ecosystem:** Developed on modern Python featuring structural pattern matching, robust typing, and high-performance native standard libraries.
+- **Model Context Protocol (MCP):** Powers the autonomous multi-agent security swarm. Implements standardized JSON-RPC 2.0 tool definitions (`mcp::k8s:isolate_pod`, `mcp::iam:revoke_role`, `mcp::falkor:mutate_graph`), establishing an air-gapped abstraction layer between AI reasoning agents and infrastructure mutation actions.
+- **Pydantic v2:** Enforces strict runtime data validation, cryptographic signature verification, and strongly-typed request/response payloads across all API endpoints.
+- **Uvicorn ASGI Server:** Provides production-grade ASGI web serving with multi-worker concurrency, request pipelining, and high-throughput HTTP handling.
+- **Render Web Service Deployment:** Deployed in production on Render's managed Linux container infrastructure, equipped with automatic Git-driven deployments, continuous health checks (`GET /health`), environment variable encryption, and automatic TLS termination.
+
+### 3. Database & Graph Analytics Engine
+At the core of SentinelGraph's low-latency threat analysis is FalkorDB, a next-generation graph database engineered for real-time cyber defense.
+- **FalkorDB Cloud (AWS `ap-south-1`):** Managed enterprise FalkorDB cluster delivering sub-10ms query execution through in-memory storage and GraphBLAS sparse matrix representations. Connected via the Redis Serialization Protocol (RESP3) using `falkordb-py` with SSL/TLS encryption.
+- **openCypher Query Language:** Utilizes industry-standard declarative Cypher syntax for complex pattern matching, variable-length path traversal (`MATCH path = (src)-[*1..4]->(dst)`), shortest path evaluation, and atomic state updates (`SET node.status = 'Isolated'`).
+- **GraphBLAS Sparse Matrix Linear Algebra:** Eliminates traditional object-oriented pointer chasing by mapping graph topologies to sparse adjacency matrices, enabling AVX-512 hardware-accelerated matrix multiplications for ultra-fast multi-hop traversals.
+- **Native Graph Algorithms:**
+  - **Betweenness Centrality (`algo.betweenness()`):** Pinpoints structural chokepoint assets and lateral pivot gateways across the infrastructure topology.
+  - **Max Flow (`algo.maxFlow()`):** Analyzes network cut capacity and exfiltration throughput bottlenecks (e.g., Ford-Fulkerson / Push-Relabel variations).
+  - **Harmonic Centrality (`algo.harmonicCentrality()`):** Computes multi-hop proximity and blast-radius reachability across connected and disconnected cloud subgraphs.
+
+### 4. DevOps, Version Control & Media Tooling
+Enterprise-grade version control and Continuous Integration/Continuous Deployment (CI/CD) workflows guarantee reproducible, reliable deployments.
+- **Git Version Control:** Strict trunk-based development with semantic commit conventions, branching hygiene, and clean history tracking.
+- **Git Large File Storage (Git LFS v3.6+):** Configured via `.gitattributes` to track large media assets (`demovideo/demo.mp4 filter=lfs diff=lfs merge=lfs -text`). This preserves repository performance, prevents GitHub's 100MB hard limit rejections, and streams the 254MB full-HD video demo efficiently without bloating git packfiles.
+- **GitHub Repository Management:** Centralized source code hosting, Git LFS pointer tracking, automated release management, and issue tracking.
+- **Vercel & Render Unified CI/CD Pipelines:** Automated build, test, and release pipelines triggered on every push to `main`, ensuring zero-downtime rolling updates across edge frontends and containerized backend microservices.
+
+### Summary Specification Matrix
+
+| Component / Layer | Technology | Version | Purpose in SentinelGraph | Deployment / Hosting |
+| :--- | :--- | :--- | :--- | :--- |
+| **Frontend Framework** | Next.js (App Router) | `14.2.14` | Reactive cyber SOC UI & visual analytics | Vercel Edge Network |
+| **Frontend Library** | React | `18.3.1` | Component lifecycle & dynamic state hooks | Vercel Edge Network |
+| **Styling & Design** | Tailwind CSS / PostCSS | `3.4.13` | Cyberpunk HUD, glassmorphism, responsive grid | Vercel Edge Network |
+| **Icons & Visuals** | Lucide React | `0.446.0` | Cybersecurity status badges & node icons | Vercel Edge Network |
+| **Backend Framework** | FastAPI | `0.110.0+` | Asynchronous REST API, CORS & OpenAPI | Render Web Service |
+| **ASGI Server** | Uvicorn | `0.28.0+` | High-performance asynchronous Python runtime | Render Web Service |
+| **Agent Protocol** | Model Context Protocol (MCP) | `1.0.0+` | Standardized agent-to-tool orchestration | Render Web Service |
+| **Data Validation** | Pydantic | `2.6.0+` | Strict request/response payload typing | Render Web Service |
+| **Graph Database** | FalkorDB Cloud | `1.0.8+` (driver) | GraphBLAS sparse matrix graph database | FalkorDB Cloud (AWS) |
+| **Query Language** | openCypher | Native | Declarative pattern matching & pathfinding | FalkorDB Engine Core |
+| **Graph Algorithms** | GraphBLAS native | Built-in | Betweenness, MaxFlow, Harmonic Centrality | FalkorDB Engine Core |
+| **Large File Storage** | Git LFS | `3.6.1` | Tracks 254MB `demovideo/demo.mp4` | GitHub Git LFS Media Store |
+| **Version Control** | Git | `2.47+` | Distributed repository & version tracking | GitHub |
+| **Continuous Delivery** | Vercel CI/CD & Render CI/CD | Cloud | Automated testing, build, & deployment | Global Cloud PaaS |
+
+---
+
 ## ⚖️ Comparative Analysis
 
 | Feature / Capability | Legacy SIEM (Splunk, Microsoft Sentinel) | Cloud Security Posture (Wiz, Prisma Cloud) | Traditional SOAR (Palo Alto XSOAR) | Identity Graph (BloodHound) | SentinelGraph (FalkorDB + Multi-Agent SOC) |
