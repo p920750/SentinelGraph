@@ -59,7 +59,3 @@ yarn-error.log*
 # OS Files
 .DS_Store
 Thumbs.db
-
-# Large media files
-demovideo/
-*.mp4
